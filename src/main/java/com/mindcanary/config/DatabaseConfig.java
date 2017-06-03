@@ -42,7 +42,7 @@ public class DatabaseConfig {
 			config.setPassword(password);
 
 			config.setDriverClassName("org.postgresql.Driver");
-			config.setPoolName("Perrys Towing Connection Pool");
+			config.setPoolName("Heroku Connection Pool");
 			config.setMaximumPoolSize(Integer.valueOf(env.getProperty("MAX_DB_CONNECTIONS")));
 
 			perryDataSource = new HikariDataSource(config);

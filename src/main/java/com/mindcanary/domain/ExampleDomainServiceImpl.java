@@ -6,7 +6,7 @@ import javax.inject.Named;
 import com.mindcanary.infrastructure.example.ExampleDaoService;
 
 @Named
-public class ExampleDomainServieImpl implements ExampleDomainService {
+public class ExampleDomainServiceImpl implements ExampleDomainService {
 
 	@Inject
 	private ExampleDaoService exampleDaoService;
