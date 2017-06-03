@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.mindcanary.domain.weatherDate.WeatherDate;
 
-public interface MockWeatherDateGenerator {
+public interface MockWeatherDateGeneratorService {
 
 	public List<WeatherDate> get365RandomWeatherDates();
 	

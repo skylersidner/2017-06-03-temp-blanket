@@ -7,13 +7,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.mindcanary.domain.weatherDate.WeatherDate;
-import com.mindcanary.utils.MockWeatherDateGenerator;
+import com.mindcanary.utils.MockWeatherDateGeneratorService;
 
 @Named
 public class WeatherDateDaoServiceImpl implements WeatherDateDaoService {
 	
 	@Inject
-	MockWeatherDateGenerator mockWeatherDateGenerator;
+	MockWeatherDateGeneratorService mockWeatherDateGenerator;
 
 	@Override
 	public List<WeatherDate> getLastYear() {

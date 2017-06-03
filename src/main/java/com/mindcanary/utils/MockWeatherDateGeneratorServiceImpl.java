@@ -11,7 +11,7 @@ import com.mindcanary.domain.type.TemperatureTrendType;
 import com.mindcanary.domain.weatherDate.WeatherDate;
 
 @Named
-public class MockWeatherDateGeneratorImpl implements MockWeatherDateGenerator {
+public class MockWeatherDateGeneratorServiceImpl implements MockWeatherDateGeneratorService {
 	
 
 	public List<WeatherDate> get365RandomWeatherDates() {
