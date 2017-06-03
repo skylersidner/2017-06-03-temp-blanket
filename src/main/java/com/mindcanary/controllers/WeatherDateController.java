@@ -20,7 +20,7 @@ public class WeatherDateController {
 	@Inject
 	private WeatherDateDomainService weatherDateDomainService;
 
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "lastYear", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
 	public List<WeatherDate> getLastYear() {
 		List<WeatherDate> response = weatherDateDomainService.getLastYear();
 		

@@ -13,22 +13,20 @@ import com.mindcanary.domain.weatherDate.WeatherDate;
 @Named
 public class MockWeatherDateGeneratorServiceImpl implements MockWeatherDateGeneratorService {
 	
+    private long dayInMilliseconds = 86400000l;
 
 	public List<WeatherDate> get365RandomWeatherDates() {
 		List<WeatherDate> weatherDates = new ArrayList<WeatherDate>();
-	    
-	    for (int x = 365; x > 0; x--) {
+
+	    long nowMilliseconds = new Date().getTime();
+	    for (int x = 0; x < 365; x++) {
 	    	WeatherDate weatherDate = new WeatherDate();
 	    	
-	    	// TODO: fix this ugliness
-		    Date now = new Date();
-		    int yesterdayInt = now.getDate() - 1;
-		    Date yesterday = new Date();
-		    yesterday.setDate(yesterdayInt);
+		    Date previousDay = new Date(nowMilliseconds - (dayInMilliseconds * x));
 		    
 		    int temperature = getRandomNumberInRange(-10, 110);
 		    
-		    weatherDate.setDate(yesterday);
+		    weatherDate.setDate(previousDay);
 		    weatherDate.setTemperature(temperature);
 		    
 		    weatherDates.add(weatherDate);
@@ -41,14 +39,11 @@ public class MockWeatherDateGeneratorServiceImpl implements MockWeatherDateGener
 		List<WeatherDate> weatherDates = new ArrayList<WeatherDate>();
 		
 		int currentTemp = 0;
+	    long nowMilliseconds = new Date().getTime();
 	    for (int x = 365; x > 0; x--) {
 	    	WeatherDate weatherDate = new WeatherDate();
-	    	
-	    	// TODO: fix this ugliness
-		    Date now = new Date();
-		    int yesterdayInt = now.getDate() - 1;
-		    Date yesterday = new Date();
-		    yesterday.setDate(yesterdayInt);
+
+		    Date previousDay = new Date(nowMilliseconds - (dayInMilliseconds * x));
 		    
 		    int temp = -10;
 		    TemperatureTrendType type;
@@ -71,7 +66,7 @@ public class MockWeatherDateGeneratorServiceImpl implements MockWeatherDateGener
 			    temp = getTrendingRandomTempInRange(currentTemp, type);
 		    }
 		    
-		    weatherDate.setDate(yesterday);
+		    weatherDate.setDate(previousDay);
 		    weatherDate.setTemperature(temp);
 		    
 		    weatherDates.add(weatherDate);
