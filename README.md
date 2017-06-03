@@ -1,14 +1,15 @@
-# HerokuPostgresBaseProject
-Base project for when I want to quickly template out a Spring Boot application to run on Heroku
+# Temperate Blanket Project
+Built off of my friend's base java app for Heroku (check him out: https://github.com/liester).
 
-I constantly found myself trying to modify one of my other projects to create a 'clean' project for a new idea.  Finally I had enough can decided that it would be much easier to simply commit a project that had my normal defaults to github and simply clone this project when necessary.
+Inspired by a friend's temperature blanket, where you stitch/knit/crochet a line into a blanket each day with the color based on the average temperature.  The goal is to have a fun way to visualize a "blanket" in the browswer based on historical weather data pulled in from an API.
 
-I also created an archetype to do this but as I didn't want to go through the pain of uploading the archetype to the maven repository this seemed like a good alternative.
+Bonus options to add:
+* Variable color schemes, chosen by user
+* Variable color schemes, based on two colors and an algorithm
+* Other temperature options like highs, lows, all-time highs or lows
+* Other weather data points like humidity, wind, rainfall
+* Scaling range for spread of colors
+* Saveable settings
 
-To try it out:
-
-`Checkout project`
-
-`Add environment variable for: DATABASE_URL & MAX_DB_CONNECTIONS`
-
-`Run as Java Application (Main class is com.perry.config.MainApplication) `
+### Activity Log
+* 6/3/2017 - Rough first draft of mock temperature algorithm built.
